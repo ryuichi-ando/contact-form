@@ -30,4 +30,6 @@ Route::get('contacts/thanks', function () {
 
 Route::middleware('auth')->group(function () {
     Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
+
+    Route::get('/admin/contacts/{contact}', [AdminController::class, 'show'])->name('admin.show');
 });
