@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\TagController;
-
+use App\Http\Controllers\ExportController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,6 +31,8 @@ Route::get('contacts/thanks', function () {
 
 Route::middleware('auth')->group(function () {
     Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
+
+    Route::get('/admin/contacts/export', [ExportController::class, 'export'])->name('admin.contacts.export');
 
     Route::get('/admin/contacts/{contact}', [AdminController::class, 'show'])->name('admin.show');
 
