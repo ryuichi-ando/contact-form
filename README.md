@@ -69,7 +69,7 @@ timestamp created_at
 timestamp updated_at
 }
 
-CATEGORIES ||--o{ CONTACT : has
+CATEGORIES ||--o{ CONTACTS : has
 CONTACTS ||--o{ CONTACT_TAG :has
 TAGS ||--o{ CONTACT_TAG : has
 ```
@@ -79,31 +79,31 @@ TAGS ||--o{ CONTACT_TAG : has
 ### 1. リポジトリをクローン
 
 ```bash
-
+git clone https://github.com/ryuichi-ando/contact-form.git
 ```
 
 ### 2. ディレクトリへ移動
 
 ```bash
-cd
+cd contact-form
 ```
 
-### 3. .env作成
+### 3. Composerインストール
+
+```bash
+composer install
+```
+
+### 4. .env作成
 
 ```bash
 cp .env.example .env
 ```
 
-### 4. Docker起動
+### 5. Docker起動
 
 ```bash
 ./vendor/bin/sail up -d
-```
-
-### 5. Composerインストール
-
-```bash
-composer install
 ```
 
 ### 6. APP_KEY生成
@@ -148,20 +148,20 @@ http://localhost
 | GET      | '/api/v1/contacts/{contact}' | お問い合わせ詳細     |
 | POST     | '/api/v1/contacts'           | お問い合わせ新規作成 |
 | PUT      | '/api/v1/contacts/{contact}' | お問い合わせ更新     |
-| DELETE   | '/api/v1/contacts/{contact}  | お問い合わせ削除     |
+| DELETE   | '/api/v1/contacts/{contact}' | お問い合わせ削除     |
 
 ## 開発環境URL
 
-ユーザーお問い合わせフォーム：
-http://localhost
+- ユーザーお問い合わせフォーム：
+  http://localhost
 
-管理者画面：
-http://localhost/admin
+- 管理者画面：
+  http://localhost/admin
 
 ## 作成者
 
 - 氏名：安藤龍一
-- GitHub：
+- GitHub：https://github.com/ryuichi-ando
 - メール：anichi8120@gmail.com
 
 ```
