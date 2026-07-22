@@ -23,6 +23,7 @@ Route::get('/', function () {
 
 Route::get('/', [ContactController::class, 'index']);
 Route::post('contacts/confirm', [ContactController::class, 'confirm'])->name('contact.confirm');
+Route::post('/', [ContactController::class, 'back'])->name('contact.back');
 Route::post('contacts', [ContactController::class, 'store'])->name('contact.store');
 Route::post('contacts/back', [ContactController::class, 'back'])->name('contact.back');
 Route::get('contacts/thanks', function () {

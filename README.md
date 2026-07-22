@@ -72,8 +72,63 @@ timestamp updated_at
 CATEGORIES ||--o{ CONTACT : has
 CONTACTS ||--o{ CONTACT_TAG :has
 TAGS ||--o{ CONTACT_TAG : has
+```
 
 ## 環境構築手順
+
+### 1. リポジトリをクローン
+
+```bash
+
+```
+
+### 2. ディレクトリへ移動
+
+```bash
+cd
+```
+
+### 3. .env作成
+
+```bash
+cp .env.example .env
+```
+
+### 4. Docker起動
+
+```bash
+./vendor/bin/sail up -d
+```
+
+### 5. Composerインストール
+
+```bash
+composer install
+```
+
+### 6. APP_KEY生成
+
+```bash
+./vendor/bin/sail artisan key:generate
+```
+
+### 7. マイグレーション
+
+```bash
+./vendor/bin/sail artisan migrate
+```
+
+### 8. Seeder実行
+
+```bash
+./vendor/bin/sail artisan db:seed
+```
+
+### 9. ブラウザでアクセス
+
+```
+http://localhost
+```
 
 ## 使用技術
 
@@ -82,7 +137,8 @@ TAGS ||--o{ CONTACT_TAG : has
 - MySQL
 - Docker
 - Laravel Sail
-- HTML/CSS
+- Blade
+- Tailwind CSS
 
 ## APIエンドポイント一覧
 
@@ -107,4 +163,7 @@ http://localhost/admin
 - 氏名：安藤龍一
 - GitHub：
 - メール：anichi8120@gmail.com
+
+```
+
 ```
